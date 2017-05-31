@@ -28,13 +28,13 @@ def gabor(r0, sigma, f0):
 
     x1, y1 = meshgrid(x,y)
 
-    r = sqrt(square(x1-sqrt(8))+square(y1-sqrt(8)))
+    r = sqrt(square(x1-sqrt(0))+square(y1-sqrt(0)))
     
     gb = (1/(2*pi*sigma*r0))*multiply(exp(-pi*square(r-r0)/(sigma^2)),cos(2*pi*f0*(r-r0)))
-    max_gb =amax(gb)
-    gb = gb/max_gb
-#    plt.imshow(gb, cmap='gray')
-#    plt.show()
+#    max_gb =amax(gb)
+#    gb = gb/max_gb
+    plt.imshow(gb, cmap='gray')
+    plt.show()
     return gb
 #Example
 #gabor(16,10,1/5)
